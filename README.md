@@ -9,6 +9,7 @@ There were several steps that we took to accomplish this which will be outlined 
 
 ## Detection
 ## Segmentation
+The “EECS_504_Project Update.ipynb shows the extraction of the counter of the retailer shoes using super pixel map. Besides, it includes the foreground/background segmentation code we implemented, which won’t give an optimal consistent segmentation results for the user shoes images”
 ## Image Stitching
 
 ## Results
