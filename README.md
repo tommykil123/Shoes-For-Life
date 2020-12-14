@@ -25,6 +25,9 @@ wget https://pjreddie.com/media/files/yolov3-openimages.weights
 Please refer to `shoe_detection/detect_shoes.ipynb` for the main detection and visualization pipeline. In addition, the detection results on our self-collected dataset are stored in the `shoe_detection/output/` folder. 
 
 ## Segmentation
+The segmentation need to be done for both retail shoes and user shoes.
+A range map operation/function was implemented to do the segmentation for retail shoes. 
+The user shoes having a more complex content need to use foreground/background segmentation follwing with the max flow/min cut graph cut algorithm.
 The `“”EECS_504_Project Update.ipynb` shows the extraction of the counter of the retailer shoes using super pixel map. Besides, it includes the foreground/background segmentation code we implemented, which won’t give an optimal consistent segmentation results for the user shoes images.
 
 ## Image Stitching
