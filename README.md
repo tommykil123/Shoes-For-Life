@@ -14,5 +14,10 @@ There were several steps that we took to accomplish this which will be outlined 
 ## Segmentation
 The “EECS_504_Project Update.ipynb shows the extraction of the counter of the retailer shoes using super pixel map. Besides, it includes the foreground/background segmentation code we implemented, which won’t give an optimal consistent segmentation results for the user shoes images”
 ## Image Stitching
-
+Stitching
+1. Find largest eigenvector of pixel coordinates for each segmentation map. Align shoes horizontally using these eigenvectors.
+2. Make vertical and horizontal cuts to find contour points of segmentation map.
+3. Use contours points to estimate similarity and homography transformation between shoes.
+4. Pick the best similarity transform and the best homography transform each by first maximizing the number of inliers produced by RANSAC and then minimizing the leasts squares costs of inliers.
+5. Pick the better transformation of the two bests by choosing the results that covers more of the user's shoe.
 ## Results
