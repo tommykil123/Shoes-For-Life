@@ -42,6 +42,9 @@ The stitching algorithm consists of the following steps:
 3. Use contours points to estimate similarity and homography transformation between shoes.
 4. Pick the best similarity transform and the best homography transform each by first maximizing the number of inliers produced by RANSAC and then minimizing the least squares costs of inliers.
 5. Pick the better transformation of the two bests by choosing the results that covers more of the user's shoe.
+The `Stitching/Stitching.ipynb` can be ran to understand the algorithm more thoroughly for the stitching process.
+<img src="images/StitchingExample.png" alt="drawing" height="350" title="Stitching Example"/>  
+*Example of Stiching with Image Transformation*
 
 ## Running the pipeline
 The final pipeline and implementation of this project can be found in "Final Project.ipynb". This jupyter notebook integrates detection, segmentation, and image stitching to produce the a single image of the overlay of retail shoe onto the user's shoes. The notebook takes as input 
