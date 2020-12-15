@@ -28,7 +28,10 @@ Please refer to `shoe_detection/detect_shoes.ipynb` for the main detection and v
 The segmentation need to be done for both retail shoes and user shoes.
 A range map operation/function was implemented to do the segmentation for retail shoes. 
 The user shoes having a more complex content need to use foreground/background segmentation follwing with the max flow/min cut graph cut algorithm.
-The `“”EECS_504_Project Update.ipynb` shows the extraction of the counter of the retailer shoes using super pixel map. Besides, it includes the foreground/background segmentation code we implemented, which won’t give an optimal consistent segmentation results for the user shoes images.
+The `Segmentation/Ford-Fulkerson.ipynb` shows the extraction of the counter of the retailer shoes using super pixel map. Besides, it includes the foreground/background segmentation code we implemented, which won’t give an optimal consistent segmentation results for the user shoes images.
+As a result of the inconsistencies in foreground and background segmentation using Ford-Fulkerson, we use the grab-cut algorithm to segment the user pictures. However, to get good results, we also created a mask region to indicate probably foreground based on the contour (Convex Hull) from SIFT feature points. The `Segmentation/Grab-Cut.ipynb` can be ran to understand the preprocessing done before applying Grab-Cut on the user's photo for segmentation.
+<img src="images/SegmentationExample.jpg" alt="drawing" height="350" title="Segmentation Example"/>  
+*Example of Segmentation using GrabCut*
 
 ## Image Stitching
 The stitching algorithm consists of the following steps:
@@ -37,4 +40,9 @@ The stitching algorithm consists of the following steps:
 3. Use contours points to estimate similarity and homography transformation between shoes.
 4. Pick the best similarity transform and the best homography transform each by first maximizing the number of inliers produced by RANSAC and then minimizing the least squares costs of inliers.
 5. Pick the better transformation of the two bests by choosing the results that covers more of the user's shoe.
+
+## Running the pipeline
+The final pipeline and implementation of this project can be found in "Final Project.ipynb". This jupyter notebook integrates detection, segmentation, and image stitching to produce the a single image of the overlay of retail shoe onto the user's shoes. The notebook takes as input 
+* Filepath of the user's image
+* Filepath of the retail shoe image
 
