@@ -30,7 +30,7 @@ A range map operation/function was implemented to do the segmentation for retail
 The user shoes having a more complex content need to use foreground/background segmentation follwing with the max flow/min cut graph cut algorithm.
 The `Segmentation/Ford-Fulkerson.ipynb` shows the extraction of the counter of the retailer shoes using super pixel map. Besides, it includes the foreground/background segmentation code we implemented, which won’t give an optimal consistent segmentation results for the user shoes images.
 As a result of the inconsistencies in foreground and background segmentation using Ford-Fulkerson, we use the grab-cut algorithm to segment the user pictures. However, to get good results, we also created a mask region to indicate probably foreground based on the contour (Convex Hull) from SIFT feature points. The `Segmentation/Grab-Cut.ipynb` can be ran to understand the preprocessing done before applying Grab-Cut on the user's photo for segmentation.
-<img src="images/SegmentationExample.jpg" alt="drawing" height="350" title="Segmentation Example"/>  
+<img src="images/SegmentationExample.png" alt="drawing" height="350" title="Segmentation Example"/>  
 *Example of Segmentation using GrabCut*
 
 ## Image Stitching
