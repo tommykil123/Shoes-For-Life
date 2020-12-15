@@ -23,6 +23,8 @@ wget https://pjreddie.com/media/files/yolov3-openimages.weights
 ```
 
 Please refer to `shoe_detection/detect_shoes.ipynb` for the main detection and visualization pipeline. In addition, the detection results on our self-collected dataset are stored in the `shoe_detection/output/` folder. 
+<img src="images/DetectionExample.png" alt="drawing" height="350" title="Detection Example"/>  
+*Example of Detection using Yolov3*
 
 ## Segmentation
 The segmentation need to be done for both retail shoes and user shoes.
